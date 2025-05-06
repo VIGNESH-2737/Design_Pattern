@@ -1,0 +1,59 @@
+public class DuckDemo {
+    public static void main(String[] args) {
+        MallardDuck md = new MallardDuck();
+        md.performFly();
+        md.performQuack();
+
+        RubberDuck rd = new RubberDuck();
+        rd.performFly();
+        rd.performQuack();
+    }
+}
+
+abstract class Duck {
+    public void performFly() {
+        System.out.println("Flying with wings");
+    }
+
+    public void performQuack() {
+        System.out.println("Quack Quack Quack");
+    }
+
+    public void swim() {
+        System.out.println("All ducks can swim");
+    }
+}
+
+class MallardDuck extends Duck {
+}
+
+class RubberDuck extends Duck {
+    @Override
+    public void performFly() {
+        System.out.println("Can't fly");
+    }
+
+    @Override
+    public void performQuack() {
+        System.out.println("Squeek Squeek");
+    }
+}
+
+class DecoyDuck extends Duck {
+    @Override
+    public void performFly() {
+        System.out.println("Can't fly");
+    }
+
+    @Override
+    public void performQuack() {
+        System.out.println("Silent");
+    }
+}
+
+class RocketDuck extends Duck {
+    @Override
+    public void performFly() {
+        System.out.println("Flying with rocket boosters!");
+    }
+}
